@@ -12,7 +12,7 @@ import requests
 
 def log_request(r, *args, **kwargs):
     request_id = r.headers.get('x-openstack-request-id')
-    print('%s %s %s' % (r.status_code, r.url, request_id))
+    print('%s %s %s %s' % (r.status_code, r.url, r.elapsed, request_id))
 
 
 def main():
