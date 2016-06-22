@@ -11,7 +11,8 @@ import requests
 
 
 def log_request(r, *args, **kwargs):
-    print('%s %s' % (r.url, r.headers.get('x-openstack-request-id')))
+    request_id = r.headers.get('x-openstack-request-id')
+    print('%s %s %s' % (r.status_code, r.url, request_id))
 
 
 def main():
